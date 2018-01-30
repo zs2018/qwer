@@ -1,0 +1,948 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Less,Less预处理器,Less简介,Less基本语法," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="LessSass styuls
+一款比较流行的预处理CSS,支持变量,混合,函数,嵌套,循环等特点官网中文网http://www.w3cplus.com/css/less
+概要
+为什么要有预处理CSS  CSS基本上是设计师的工具,不是程序员的工具.在程序的眼里,CSS是很头疼的事情  它并不像其他程序语言,比如说PHP javascript等等,有自己的变量,常量,条件语句  以及一些编程语法,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Less预处理器">
+<meta property="og:url" content="http://yoursite.com/2016/09/06/Less/index.html">
+<meta property="og:site_name" content="轩少">
+<meta property="og:description" content="LessSass styuls
+一款比较流行的预处理CSS,支持变量,混合,函数,嵌套,循环等特点官网中文网http://www.w3cplus.com/css/less
+概要
+为什么要有预处理CSS  CSS基本上是设计师的工具,不是程序员的工具.在程序的眼里,CSS是很头疼的事情  它并不像其他程序语言,比如说PHP javascript等等,有自己的变量,常量,条件语句  以及一些编程语法,">
+<meta property="og:updated_time" content="2016-10-06T08:09:20.568Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Less预处理器">
+<meta name="twitter:description" content="LessSass styuls
+一款比较流行的预处理CSS,支持变量,混合,函数,嵌套,循环等特点官网中文网http://www.w3cplus.com/css/less
+概要
+为什么要有预处理CSS  CSS基本上是设计师的工具,不是程序员的工具.在程序的眼里,CSS是很头疼的事情  它并不像其他程序语言,比如说PHP javascript等等,有自己的变量,常量,条件语句  以及一些编程语法,">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/09/06/Less/"/>
+
+  <title> Less预处理器 | 轩少 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">轩少</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">兴趣遍地都是，专注和持之以恒才是真正稀缺的。</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Kategorien
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            Über
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Less预处理器
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <time itemprop="dateCreated" datetime="2016-09-06T11:30:30+08:00" content="2016-09-06">
+              2016-09-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">in</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/blog/" itemprop="url" rel="index">
+                    <span itemprop="name">blog</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/06/Less/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/06/Less/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2016/09/06/Less/"class="leancloud_visitors"  data-flag-title="Less预处理器">
+                  &nbsp; | &nbsp; visitors
+                  </span>
+         
+          
+          
+             <span id="/2016/09/06/Less/" class="leancloud_visitors" data-flag-title="Less预处理器">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">visitors </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Less"><a href="#Less" class="headerlink" title="Less"></a>Less</h1><h2 id="Sass-styuls"><a href="#Sass-styuls" class="headerlink" title="Sass styuls"></a>Sass styuls</h2><blockquote>
+<p>一款比较流行的预处理CSS,支持变量,混合,函数,嵌套,循环等特点<br><a href="http://lesscss.org/" target="_blank" rel="external">官网</a><br><a href="http://lesscss.cn/" target="_blank" rel="external">中文网</a><br><a href="http://www.w3cplus.com/css/less" target="_blank" rel="external">http://www.w3cplus.com/css/less</a></p>
+<h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2></blockquote>
+<h3 id="为什么要有预处理CSS"><a href="#为什么要有预处理CSS" class="headerlink" title="为什么要有预处理CSS"></a>为什么要有预处理CSS</h3><p>  CSS基本上是设计师的工具,不是程序员的工具.在程序的眼里,CSS是很头疼的事情<br>  它并不像其他程序语言,比如说PHP javascript等等,有自己的变量,常量,条件语句<br>  以及一些编程语法,只是一行行简单的属性描述,写起来相当的费事,而且代码难易组织和维护<br>  很自然,有人就开始想,能不能让CSS也像其他程序语言一样,加入一些编程元素,让CSS能像其他程序语言一样可以做一些预定的处理,这样一来就有了CSS预处理器(CSS Preprecessor)</p>
+<h2 id="什么是预处理CSS"><a href="#什么是预处理CSS" class="headerlink" title="什么是预处理CSS"></a>什么是预处理CSS</h2><ul>
+<li><p>CSS语言的超级集合比CSS更丰满</p>
+<p>CSS预处理器定义了一种薪的语言,其基本思想是,用一种专门的编程语言,为CSS增加了一些编程的特性,将CSS作为目标生成文件,然后开发者只需要使用这种语言进行编码工作.通俗的说CSS预处理器用一种专门的编程语言,进行web页面样式设计,然后再编译成正常的CSS文件,以提供项目使用,CSS预处理器为CSS增加了一些编程特性,无需考虑浏览器兼容性的问题,例如你可以在CSS中使用变量,简单的逻辑程序,函数等等在编程语言中的一些基本特性<br>可以让你的CSS更加简洁,适应性更强,可读性更佳,更易于代码的维护等等诸多好处<br>CSS预处理器技术已经非常成熟,而且也涌现了很多种不同的CSS预处理语言<br>比如Sass Less stylus Turbine、Swithch CSS、CSS Cacheer、DT CSS 等<br>如热门话题在linkedin twitter CSS-trick 知乎以及各大技术论坛上,很多人为此争论不休<br>.相比我们对是否应该使用CSS预处理器的话题而言,这已经是很大的进步了<br>到目前为止,在众多优秀的CSS预处理语言中就属Sass Less 和Stylus最优秀,讨论的也多<br>对比的也多,本文将分别从他们产生的背景,安装,使用语法,异同等几个对比之处,向你介绍这3款CSS预处理语言.相信前端开发工程师会做出自己的选择我要选择哪一款CSS预处理器</p>
+</li>
+</ul>
+<h2 id="如何使用Less"><a href="#如何使用Less" class="headerlink" title="如何使用Less"></a>如何使用Less</h2><h3 id="less-js"><a href="#less-js" class="headerlink" title="less.js"></a>less.js</h3><blockquote>
+<p>网页运行阶段解析Less文件</p>
+</blockquote>
+<h3 id="less-compiler"><a href="#less-compiler" class="headerlink" title="less compiler"></a>less compiler</h3><blockquote>
+<p>开发阶段编译less文件成CSS</p>
+<h3 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h3></blockquote>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><ul>
+<li>安装node.js</li>
+<li>安装less<ul>
+<li>命令行执行 : npm install -g less<h4 id="编译操作"><a href="#编译操作" class="headerlink" title="编译操作"></a>编译操作</h4></li>
+</ul>
+</li>
+</ul>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><p>//模板注释,这里的注释转换成CSS会删除<br>/<em>CSS 注释语法 转换成CSS后仍然保留</em>/</p>
+<h4 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h4><blockquote>
+<p>将需要重复使用或经常修改的值定义成为变量,需要使用的地方引用</p>
+</blockquote>
+<ul>
+<li><p>less</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@变量名:变量值;</div><div class="line"><span class="variable">@bgColor:</span><span class="number">#f5f5f5</span>;</div><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">  <span class="attribute">width</span>:@变量名;</div><div class="line">  <span class="attribute">background-color</span>:<span class="variable">@bgColor</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>css</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">  <span class="attribute">width</span>:@变量名;</div><div class="line">  <span class="attribute">background-color</span>:<span class="number">#f5f5f5</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h4><blockquote>
+<p>如果你在CSS中经常使用直接子代,那Less的嵌套语法使用起来非常happy</p>
+<ul>
+<li>less<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="variable">@containerWidth</span>;</div><div class="line">  &gt; <span class="selector-class">.row</span> &#123;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">    <span class="selector-tag">a</span>&#123;</div><div class="line">      <span class="attribute">color</span>: <span class="number">#f40</span>;</div><div class="line">      <span class="selector-tag">&amp;</span><span class="selector-pseudo">:hover</span>&#123;</div><div class="line">        <span class="attribute">color</span>: <span class="number">#f50</span>;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="selector-tag">div</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">    <span class="selector-class">.hello</span> &#123;</div><div class="line">      <span class="attribute">background-color</span>: <span class="number">#00f</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>css</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">1024px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> &gt; <span class="selector-class">.row</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> &gt; <span class="selector-class">.row</span> <span class="selector-tag">a</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#f40</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> &gt; <span class="selector-class">.row</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">  <span class="attribute">color</span>: <span class="number">#f50</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> <span class="selector-tag">div</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.container</span> <span class="selector-tag">div</span> <span class="selector-class">.hello</span> &#123;</div><div class="line">  <span class="attribute">background-color</span>: <span class="number">#00f</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="mixin"><a href="#mixin" class="headerlink" title="mixin"></a>mixin</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* 定义一个类 */</span></div><div class="line"><span class="selector-class">.roundedCorners</span>(<span class="variable">@radius</span>: <span class="number">5px</span>) &#123;</div><div class="line">  <span class="attribute">-moz-border-radius</span>: <span class="variable">@radius</span>;</div><div class="line">  <span class="attribute">-webkit-border-radius</span>: <span class="variable">@radius</span>;</div><div class="line">  <span class="attribute">border-radius</span>: <span class="variable">@radius</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 定义的类应用到另个一个类中 */</span></div><div class="line"><span class="selector-id">#header</span> &#123;</div><div class="line">  <span class="selector-class">.roundedCorners</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#footer</span> &#123;</div><div class="line">  <span class="selector-class">.roundedCorners</span>(<span class="number">10px</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="import"><a href="#import" class="headerlink" title="import"></a>import</h4><blockquote>
+<p>我们可以在开发阶段将样式放到多个文件中,最后通过import的方式引入进来</p>
+<ul>
+<li>less</li>
+</ul>
+</blockquote>
+  <figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// main.less</span></div><div class="line"><span class="variable">@btnColor:</span> red;</div><div class="line"><span class="keyword">@import</span> url(<span class="string">'_buttom.less'</span>);</div><div class="line"></div><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">1024px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// _buttom.less</span></div><div class="line"><span class="selector-class">.btn</span>&#123;</div><div class="line">  <span class="attribute">color</span>: <span class="variable">@btnColor</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>css</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.btn</span>&#123;</div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">body</span>&#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">1024px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><h5 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h5><ul>
+<li>lighten:将一个颜色变亮<ul>
+<li>lighten(#000,10%)//#1a1a1a</li>
+</ul>
+</li>
+<li>darken:将一个颜色变暗<ul>
+<li>darken(#000,10%)//#e6e6e6</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Less/" rel="tag">#Less</a>
+          
+            <a href="/tags/Less预处理器/" rel="tag">#Less预处理器</a>
+          
+            <a href="/tags/Less简介/" rel="tag">#Less简介</a>
+          
+            <a href="/tags/Less基本语法/" rel="tag">#Less基本语法</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/05/HTML5API/" rel="next" title="HTML5">
+                <i class="fa fa-chevron-left"></i> HTML5
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/06/Bootstrap/" rel="prev" title="Bootstrap响应式开发">
+                Bootstrap响应式开发 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/06/Less/"
+           data-title="Less预处理器" data-url="http://yoursite.com/2016/09/06/Less/">
+      </div>
+    
+  </div>
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="zhengwei" />
+          <p class="site-author-name" itemprop="name">zhengwei</p>
+          <p class="site-description motion-element" itemprop="description">兴趣遍地都是，专注和持之以恒才是真正稀缺的。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">Kategorien</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">Tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Less"><span class="nav-number">1.</span> <span class="nav-text">Less</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sass-styuls"><span class="nav-number">1.1.</span> <span class="nav-text">Sass styuls</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概要"><span class="nav-number">1.2.</span> <span class="nav-text">概要</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要有预处理CSS"><span class="nav-number">1.2.1.</span> <span class="nav-text">为什么要有预处理CSS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是预处理CSS"><span class="nav-number">1.3.</span> <span class="nav-text">什么是预处理CSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何使用Less"><span class="nav-number">1.4.</span> <span class="nav-text">如何使用Less</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#less-js"><span class="nav-number">1.4.1.</span> <span class="nav-text">less.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#less-compiler"><span class="nav-number">1.4.2.</span> <span class="nav-text">less compiler</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用方式"><span class="nav-number">1.4.3.</span> <span class="nav-text">使用方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">1.4.3.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编译操作"><span class="nav-number">1.4.3.2.</span> <span class="nav-text">编译操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">1.4.4.</span> <span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义变量"><span class="nav-number">1.4.4.1.</span> <span class="nav-text">定义变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嵌套"><span class="nav-number">1.4.4.2.</span> <span class="nav-text">嵌套</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mixin"><span class="nav-number">1.4.4.3.</span> <span class="nav-text">mixin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#import"><span class="nav-number">1.4.4.4.</span> <span class="nav-text">import</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数"><span class="nav-number">1.4.4.5.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#内置函数"><span class="nav-number">1.4.4.5.1.</span> <span class="nav-text">内置函数</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhengwei</span>
+</div>
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zwxs"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("mwqwObMoes44ucHuaqDNkJte-gzGzoHsz", "MQIAXBQM04bkgRXJT1RK7X0B");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+  
+     <!-- custom analytics part create by xiamo -->
+<script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+<script>AV.initialize("mwqwObMoes44ucHuaqDNkJte-gzGzoHsz", "MQIAXBQM04bkgRXJT1RK7X0B");</script>
+<script>
+function showTime(Counter) {
+  var query = new AV.Query(Counter);
+  $(".leancloud_visitors").each(function() {
+    var url = $(this).attr("id").trim();
+    query.equalTo("url", url);
+    query.find({
+      success: function(results) {
+        if (results.length == 0) {
+          var content = '0 ' + $(document.getElementById(url)).text();
+          $(document.getElementById(url)).text(content);
+          return;
+        }
+        for (var i = 0; i < results.length; i++) {
+          var object = results[i];
+          var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
+          $(document.getElementById(url)).text(content);
+        }
+      },
+      error: function(object, error) {
+        console.log("Error: " + error.code + " " + error.message);
+      }
+    });
+
+  });
+}
+
+function addCount(Counter) {
+  var Counter = AV.Object.extend("Counter");
+  url = $(".leancloud_visitors").attr('id').trim();
+  title = $(".leancloud_visitors").attr('data-flag-title').trim();
+  var query = new AV.Query(Counter);
+  query.equalTo("url", url);
+  query.find({
+    success: function(results) {
+      if (results.length > 0) {
+        var counter = results[0];
+        counter.fetchWhenSave(true);
+        counter.increment("time");
+        counter.save(null, {
+          success: function(counter) {
+            var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
+            $(document.getElementById(url)).text(content);
+          },
+          error: function(counter, error) {
+            console.log('Failed to save Visitor num, with error message: ' + error.message);
+          }
+        });
+      } else {
+        var newcounter = new Counter();
+        newcounter.set("title", title);
+        newcounter.set("url", url);
+        newcounter.set("time", 1);
+        newcounter.save(null, {
+          success: function(newcounter) {
+              console.log("newcounter.get('time')="+newcounter.get('time'));
+            var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
+            $(document.getElementById(url)).text(content);
+          },
+          error: function(newcounter, error) {
+            console.log('Failed to create');
+          }
+        });
+      }
+    },
+    error: function(error) {
+      console.log('Error:' + error.code + " " + error.message);
+    }
+  });
+}
+$(function() {
+  var Counter = AV.Object.extend("Counter");
+  if ($('.leancloud_visitors').length == 1) {
+    addCount(Counter);
+  } else if ($('.post-title-link').length > 1) {
+    showTime(Counter);
+  }
+});
+</script>
+
+  
+</body>
+</html>
